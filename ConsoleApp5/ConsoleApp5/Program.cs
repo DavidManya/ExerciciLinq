@@ -14,7 +14,7 @@ namespace ConsoleApp5
 
             IEnumerable<int> queryParell = from num in ArrayMostra.Where(x => x % 2 == 0) select num;
 
-            List<int> ArrayParell = queryParell.ToList();
+            int[] ArrayParell = queryParell.ToArray();
 
             foreach (int i in ArrayParell)
             {
@@ -35,7 +35,7 @@ namespace ConsoleApp5
             Console.WriteLine();
             Console.WriteLine("Mostrem números majors a 5 dins l'array:");
             IEnumerable<int> queryMes5 = from num in ArrayMostra.Where(x => x > 5) select num;
-            List<int> ArrayMes5 = queryMes5.ToList();
+            int[] ArrayMes5 = queryMes5.ToArray();
             foreach (int i in ArrayMes5)
             {
                 Console.WriteLine(i);
@@ -43,7 +43,7 @@ namespace ConsoleApp5
             Console.WriteLine();
             Console.WriteLine("Mostrem números menors a 5 dins l'array:");
             IEnumerable<int> queryMenys5 = from num in ArrayMostra.Where(x => x < 5) select num;
-            List<int> ArrayMenys5 = queryMenys5.ToList();
+            int[] ArrayMenys5 = queryMenys5.ToArray();
             foreach (int i in ArrayMenys5)
             {
                 Console.WriteLine(i);
@@ -56,21 +56,21 @@ namespace ConsoleApp5
                 Console.WriteLine(i);
             }
             Console.WriteLine("Llistarem els noms que comencin per lletra 'O':");
-            List<string> ArrayNomsO = (from nom1 in ArrayNoms.Where(x => x.StartsWith("O")) select nom1).ToList();
+            string[] ArrayNomsO = (from nom1 in ArrayNoms.Where(x => x.StartsWith("O")) select nom1).ToArray();
             foreach (string i in ArrayNomsO)
             {
                 Console.WriteLine(i);
             }
             Console.WriteLine();
             Console.WriteLine("Llistarem els noms que tinguin més de 5 lletres:");
-            List<string> ArrayNoms5 = (from nom2 in ArrayNoms.Where(x => x.Length > 5 ) select nom2).ToList();
+            string[] ArrayNoms5 = (from nom2 in ArrayNoms.Where(x => x.Length > 5 ) select nom2).ToArray();
             foreach (string i in ArrayNoms5)
             {
                 Console.WriteLine(i);
             }
             Console.WriteLine();
             Console.WriteLine("Llistarem els noms en ordre descendent:");
-            List<string> ArrayNomsD = (from nom3 in ArrayNoms orderby nom3 descending select nom3).ToList();
+            string[] ArrayNomsD = (from nom3 in ArrayNoms orderby nom3 descending select nom3).ToArray();
             foreach (string i in ArrayNomsD)
             {
                 Console.WriteLine(i);
